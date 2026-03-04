@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -27,10 +28,16 @@ export default function About() {
       <section className="bg-white border-y border-warm-light/30">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="grid md:grid-cols-3 gap-12">
-            {/* Photo placeholder */}
+            {/* Photo */}
             <div className="md:col-span-1">
-              <div className="aspect-[3/4] bg-cream border border-warm-light/40 flex items-center justify-center">
-                <p className="text-sm text-warm-gray">Photo placeholder</p>
+              <div className="aspect-[3/4] relative overflow-hidden">
+                <Image
+                  src="/images/annie-headshot-1.jpg"
+                  alt="Annie Aguiñiga Frew"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
 
